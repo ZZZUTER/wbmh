@@ -1,440 +1,103 @@
 <template>
-  <div class="comicend">
-    <div class="nav_layout">
-      <div class="com_nav">
-        <div class="nav_content">
-          <div class="nav_left">
-            <div class="back_btn l_con"></div>
-          </div>
-          <div class="nav_middle">
-            <span class="nav_title">完结</span>
-          </div>
-          <div class="nav_right"></div>
-        </div>
-        <!---->
+  <div class="page-comicend">
+    <!-- 头部 -->
+    <normal-header title="完结"></normal-header>
+    <!-- main -->
+  <div class="main">
+    <div class="comic-main" v-for="item in comicList" :key="item.info_id">
+      <div class="comic_cover_pic">
+        <img :src="item.image_ext_url" alt="">
       </div>
+          <p><span :class="item.cate_list[0].cate_en_name">{{item.cate_list[0].cate_cn_name}}</span>{{ item.extra.name}}</p>
     </div>
-    <div class="end_list_box scroll">
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/22/2084322240_mGV6SQRx.jpg"
-            lazy="loaded"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;https://img.manhua.weibo.com/hcover/2018/08/22/2084322240_mGV6SQRx.jpg&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">渡灵Guarding</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_kzPR1PMX.jpg"
-            lazy="loaded"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_kzPR1PMX.jpg&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">秋语落风—山寨大哥成长记</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_C0jKJkU0.jpg"
-            lazy="loaded"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_C0jKJkU0.jpg&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_green">
-                  <span class="works_label_text">校园</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">飓风13号</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_Sjx51dYB.jpg"
-            lazy="loaded"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_Sjx51dYB.jpg&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_blue">
-                  <span class="works_label_text">奇幻</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">邪门大酒店</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_ZTFdJpZS.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">貘香</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/02/07/6391218420_5ziHWTki.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_black">
-                  <span class="works_label_text">悬疑</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">海中世</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/02/07/6068730587_jC65voOa.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">特工皇妃楚乔传</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/03/07/6348066216_hH3yGTsf.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_pink">
-                  <span class="works_label_text">动作</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">猎鸦</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/02/07/5657589144_8sjtZY5A.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_yellow">
-                  <span class="works_label_text">古风</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">白鹤三绝</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_q7gyJph8.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">布拉格小夜曲</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_ujNABQac.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">千灯录</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_oGPAXrrA.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_blue">
-                  <span class="works_label_text">奇幻</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">禁魔启示录</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_Ze3ufnt8.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">无名分浪漫</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_33EcigMK.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_blue">
-                  <span class="works_label_text">奇幻</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">距离1400光年</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_4Bh9oO1w.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">西京梦华</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/08/21/3471934934_x0qG3q76.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">一往</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/02/11/1296720452_KmkBApPF.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">滚蛋吧肿瘤君！</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-      <div class="end_list_item">
-        <div class="comic_cover_container" style="width: 100%;">
-          <div
-            class="comic_cover"
-            data-src="https://img.manhua.weibo.com/hcover/2018/04/17/2526032835_qp9lDwjE.jpg"
-            lazy="loading"
-            style="width: 100%; height: 13.1875rem; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;);"
-          ></div>
-          <!---->
-          <div class="comic_cover_info">
-            <div class="comic_cover_titleBox">
-              <div class="comic_cover_label">
-                <div class="works_label label_bg_orange">
-                  <span class="works_label_text">恋爱</span>
-                </div>
-              </div>
-              <div class="comic_cover_title" style="font-size: 1rem;">外公芳龄38</div>
-              <!---->
-            </div>
-            <!---->
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
+  </div>
+  <!-- http://manhua.weibo.cn/wbcomic/home/recommend_list?location_en=ending_works_list&_type= -->
 </template>
 
 <script>
+import NormalHeader from '@/components/NormalHeader'
+import { getComicend } from '@/api/cartoon'
 export default {
-  name: 'Comicend'
+  name: 'Comicend',
+  components: {
+    NormalHeader
+  },
+  data () {
+    return {
+      comicList: []
+    }
+  },
+  created () {
+    getComicend().then(res => {
+      console.log(res)
+      if (res.status === 200) {
+        // ok
+        this.comicList = res.data.data.ending_works_list
+      } else {
+        alert(res.message)
+      }
+    }).catch(err => {
+      console.log(err)
+
+      alert('网络异常，请稍后重试')
+    })
+    // fetch('/api/wbcomic/home/recommend_list?location_en=ending_works_list&_type=h5').then(response => response.json()).then(res => {
+    //   console.log(res);
+    // 查看是否拿到数据
+    // })
+  }
 }
 </script>
+
+<style lang="scss" scoped>
+.page-comicend {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+// main
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .comic-main {
+      width: 100%;
+      height: 240px;
+       margin-bottom: 8px;
+      .comic_cover_pic {
+        width: 100%;
+        height: 211px;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: pink;
+        img {
+          width: 100%;
+        }
+      }
+    }
+     p {
+      width: 100%;
+      height: 29px;
+      line-height: 29px;
+      padding: 0 8px;
+      font-size: 16px;
+      color: #666;
+      span {
+        font-size: 10px;
+        display: inline-block;
+        width: 32px;
+        height: 16px;
+        border-radius: 3px;
+        text-align: center;
+        line-height: 16px;
+        color: #efefef;
+        background-color: orange;
+        margin-right: 4px;
+        vertical-align: middle;
+        margin-bottom: 2px;
+      }
+     }
+  }
+}
+</style>

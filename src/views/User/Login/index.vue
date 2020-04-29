@@ -1,11 +1,11 @@
 <template>
-  <div class="page-mine">
-    <h1>个人页面</h1>
+  <div class="page-login">
+    <h1>登录页面</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Mine'
+  name: 'Login'
 }
 </script>

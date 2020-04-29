@@ -1,12 +1,11 @@
 <template>
-  <div class="login">
-    <h1>登录页面</h1>
+  <div class="swiper-slide">
+    <slot></slot>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Login'
+  name: 'SwiperItem'
 }
 </script>
