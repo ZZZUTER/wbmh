@@ -1,103 +1,121 @@
 <template>
   <div class="page-comicend">
-    <!-- 头部 -->
-    <normal-header title="完结"></normal-header>
-    <!-- main -->
-  <div class="main">
-    <div class="comic-main" v-for="item in comicList" :key="item.info_id">
-      <div class="comic_cover_pic">
-        <img :src="item.image_ext_url" alt="">
-      </div>
-          <p><span :class="item.cate_list[0].cate_en_name">{{item.cate_list[0].cate_cn_name}}</span>{{ item.extra.name}}</p>
+    <div class="header">
+      <router-link to="/">
+        <p class="headerBack">
+          <img src="../../assets/icon/back.png" alt />
+        </p>
+      </router-link>
+      <p class="headerContain">完结</p>
     </div>
-
+    <div class="comicMain" v-backtotop>
+      <div class="comicMainBox" v-if="showCard">
+        <dl v-for="item in Endlist" :key="item.object_id" @click="getBooks(item.object_id)">
+          <dd class="comic_cover">
+            <img :src="item.image_ext_url" alt />
+          </dd>
+          <dt>
+            <div class="dtBox">{{item.title}}</div>
+            <div class="comic_cover_title">{{item.extra.name}}</div>
+          </dt>
+        </dl>
+      </div>
+      <div class="loadBox" v-else></div>
+    </div>
   </div>
-  </div>
-  <!-- http://manhua.weibo.cn/wbcomic/home/recommend_list?location_en=ending_works_list&_type= -->
 </template>
 
 <script>
-import NormalHeader from '@/components/NormalHeader'
-import { getComicend } from '@/api/cartoon'
+import { getComicEnd } from '@/api/cartoon'
+
 export default {
-  name: 'Comicend',
-  components: {
-    NormalHeader
-  },
+  name: 'comicend',
+
   data () {
     return {
-      comicList: []
+      Endlist: [],
+      showCard: false
     }
   },
-  created () {
-    getComicend().then(res => {
-      console.log(res)
-      if (res.status === 200) {
-        // ok
-        this.comicList = res.data.data.ending_works_list
-      } else {
-        alert(res.message)
-      }
-    }).catch(err => {
-      console.log(err)
 
-      alert('网络异常，请稍后重试')
+  methods: {
+    getBooks (bookId) {
+      this.$router.push({
+        path: '/details',
+        query: {
+          bookId
+        }
+      })
+    }
+  },
+
+  created () {
+    getComicEnd().then(res => {
+      console.log(res)
+      this.showCard = true
+      this.Endlist = res.data.data.ending_works_list
     })
-    // fetch('/api/wbcomic/home/recommend_list?location_en=ending_works_list&_type=h5').then(response => response.json()).then(res => {
-    //   console.log(res);
-    // 查看是否拿到数据
-    // })
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" sscoped>
 .page-comicend {
   display: flex;
-  flex-direction: column;
   height: 100%;
-// main
-  .main {
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    .comic-main {
-      width: 100%;
-      height: 240px;
-       margin-bottom: 8px;
-      .comic_cover_pic {
-        width: 100%;
-        height: 211px;
-        border-radius: 5px;
-        overflow: hidden;
-        background-color: pink;
-        img {
-          width: 100%;
-        }
-      }
+  flex-direction: column;
+  .header {
+    display: inline-block;
+    position: relative;
+    height: 44px;
+    .headerBack {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      height: 44px;
     }
-     p {
+    .headerContain {
+      text-align: center;
+      font-size: 18px;
+      line-height: 44px;
+      height: 44px;
+    }
+  }
+
+  .comicMain {
+    flex: 1;
+    overflow: auto;
+    .comic_cover img {
       width: 100%;
-      height: 29px;
-      line-height: 29px;
-      padding: 0 8px;
-      font-size: 16px;
-      color: #666;
-      span {
-        font-size: 10px;
-        display: inline-block;
+      height: 210px;
+      border-radius: 8px;
+    }
+    dl {
+      margin-bottom: 4px;
+    }
+    dt {
+      width: 100%;
+      height: 28px;
+      display: flex;
+      .dtBox {
         width: 32px;
         height: 16px;
-        border-radius: 3px;
-        text-align: center;
+        background: #fc7933;
+        border-radius: 2px;
         line-height: 16px;
-        color: #efefef;
-        background-color: orange;
-        margin-right: 4px;
-        vertical-align: middle;
-        margin-bottom: 2px;
+        font-size: 10px;
+        text-align: center;
+        color: #fff;
+        margin: auto 10px;
       }
-     }
+      .comic_cover_title {
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        margin: auto 0;
+        color: #666;
+      }
+    }
   }
 }
 </style>

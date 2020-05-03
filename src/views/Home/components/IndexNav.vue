@@ -18,7 +18,7 @@
         <p class="nav-text font-24">榜单</p>
       </div>
     </router-link>
-    <router-link to="/comic">
+    <router-link to="/comicend">
       <div class="nav-item">
        <img src="@/assets/icon/ending.png" alt="" />
         <p class="nav-text font-24">完结</p>

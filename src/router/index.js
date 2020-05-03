@@ -1,16 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import Home from '../views/Home'
 import Cate from '../views/Cate'
 import Comicend from '../views/Comicend'
 import Daypub from '../views/Daypub'
-import My from '../views/My'
+import Mine from '../views/Mine'
 import Rank from '../views/Rank'
 import SearchResult from '../views/SearchResult'
 import Search from '../views/Search'
-import User from '../views/User'
-import Login from '../views/User/Login'
-import Register from '../views/User/Register'
+import Login from '../views/Login'
+import Register from '../views/Register'
+import fineworks from '../views/Fineworks'
+import hotserial from '../views/Hotserial'
+import newarrival from '../views/Newarrival'
+import popularworks from '../views/Popularworks'
+import weekrecommend from '../views/Weekrecommend'
+import xiaobianrecommend from '../views/Xiaobianrecommend'
+import comicDetails from '../views/Details'
 
 Vue.use(VueRouter)
 
@@ -20,27 +27,39 @@ const router = new VueRouter({
     { path: '/cate', component: Cate },
     { path: '/comicend', component: Comicend },
     { path: '/daypub', component: Daypub },
-    { path: '/my', component: My },
+    { path: '/mine', component: Mine },
     { path: '/rank', component: Rank },
     { path: '/search-result', component: SearchResult },
     { path: '/search', component: Search },
+    { path: '/login', component: Login },
+    { path: '/register', component: Register },
     {
-      path: '/user',
-      component: User,
-      children: [
-        {
-          path: 'login',
-          component: Login
-        },
-        {
-          path: 'register',
-          component: Register
-        },
-        {
-          path: '',
-          redirect: '/user/login'
-        }
-      ]
+      path: '/fineworks',
+      component: fineworks
+    },
+    {
+      path: '/hotserial',
+      component: hotserial
+    },
+    {
+      path: '/newarrival',
+      component: newarrival
+    },
+    {
+      path: '/popularworks',
+      component: popularworks
+    },
+    {
+      path: '/weekrecommend',
+      component: weekrecommend
+    },
+    {
+      path: '/xiaobianrecommend',
+      component: xiaobianrecommend
+    },
+    {
+      path: '/details',
+      component: comicDetails
     },
     { path: '/', redirect: '/home' }
   ]

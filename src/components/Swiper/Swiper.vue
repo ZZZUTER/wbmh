@@ -22,7 +22,7 @@ export default {
   props: {
     autoplay: {
       type: Number,
-      default: 0
+      default: 3000
     },
     loop: {
       type: Boolean,
@@ -42,11 +42,15 @@ export default {
 
       loop: this.loop,
 
+      paginationClickable: true,
+
       autoplay: this.autoplay ? {
         delay: this.autoplay,
         stopOnLastSlide: false,
         disableOnInteraction: true,
       } : false,
+
+      touchable: true,
 
       on: {
         // 这里不要使用箭头函数，否则里面的this指向指向的是当前的组件实例。而不是想要的 swiper 实例
@@ -67,9 +71,20 @@ export default {
 <style lang="scss">
 .swiper-container {
   border-radius:10px ;
-  width: 343px;
+  width: 342px;
   height: 214px;
   background-color: paleturquoise;
-  margin: auto;
+  // margin: auto;
+}
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background: #f75d79;
+}
+.swiper-container img {
+  width: 100%;
+  height: 100%;
 }
 </style>
