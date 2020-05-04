@@ -123,7 +123,7 @@ export default {
 }
 </script>
 
-<style lang="scss" sscoped>
+<style lang="scss" scoped>
 .page-me {
   .com_navs {
     position: absolute;

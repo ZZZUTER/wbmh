@@ -95,7 +95,7 @@ export default {
 }
 </script>
 
-<style lang="scss" sscoped>
+<style lang="scss" scoped>
 .page-login {
   .view_login {
     position: relative;

@@ -111,7 +111,7 @@ export default {
 }
 </script>
 
-<style lang="scss" sscoped>
+<style lang="scss" scoped>
 .searchMain {
   flex: 1;
   overflow: auto;

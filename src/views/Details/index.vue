@@ -207,7 +207,7 @@ export default {
 }
 </script>
 
-<style lang="scss" sscoped>
+<style lang="scss" scoped>
 body,
 html {
   height: 100%;

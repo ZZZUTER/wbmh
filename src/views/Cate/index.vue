@@ -143,7 +143,7 @@ export default {
 }
 </script>
 
-<style lang="scss" sscoped>
+<style lang="scss" scoped>
 html,
 body {
   background: #f8f8f8;

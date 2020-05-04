@@ -2,14 +2,21 @@
   <div class="page">
     <div class="header">
       <router-link to="/">
-        <p class="headerBack"><img src="../../assets/icon/back.png" alt=""></p>
+        <p class="headerBack">
+          <img src="../../assets/icon/back.png" alt />
+        </p>
       </router-link>
       <p class="headerContain">精品佳作</p>
     </div>
 
     <div class="finewordMain" v-backtotop>
       <div v-if="showCard">
-        <div class="finewordBox" v-for="item in fineWorks" :key="item.info_id" @click="getBooks(item.object_id)">
+        <div
+          class="finewordBox"
+          v-for="item in fineWorks"
+          :key="item.info_id"
+          @click="getBooks(item.object_id)"
+        >
           <dl>
             <dt>
               <img :src="item.image_ext_url" alt />
@@ -61,11 +68,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import '@/assets/styles/mixins.scss';
-// .header {
-//   @include border-bottom;
-// }
-
+@import "@/assets/styles/mixins.scss";
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header {
+  @include border-bottom;
+  display: inline-block;
+  position: relative;
+  height: 44px;
+  border: 0;
+  .headerBack {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 44px;
+  }
+  .headerContain {
+    text-align: center;
+    font-size: 18px;
+    line-height: 44px;
+    height: 44px;
+  }
+}
 .finewordMain {
   flex: 1;
   overflow: auto;

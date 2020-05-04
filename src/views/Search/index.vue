@@ -155,7 +155,7 @@ export default {
 }
 </script>
 
-<style lang="scss" sscoped>
+<style lang="scss" scoped>
 .page-search {
   display: flex;
   height: 100%;

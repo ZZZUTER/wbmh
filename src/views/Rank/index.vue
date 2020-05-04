@@ -205,7 +205,8 @@ body {
     flex: 1;
     overflow: auto;
     .comic_horizontal_container {
-      padding: 0 0 16px 0;
+      display: flex;
+      padding: 0 16px 16px 16px;
       position: relative;
       .comic_cover {
         img {
@@ -213,15 +214,30 @@ body {
           height: 82px;
           border-radius: 4px;
         }
+        margin-right: 4px;
       }
       .rankMainTitle {
         width: 140px;
+        // overflow: hidden;
+        // flex: 0.8;
+        padding-right: 16px;
+      }
+      .comic_cover_horizontal_title {
+        margin-top: 4px;
+        padding-bottom: 8px;
         overflow: hidden;
-        flex: 0.8;
+      }
+      .comic_cover_horizontal_author {
+        display: flex;
+        padding-bottom: 8px;
+        img {
+          width: 16px;
+          height: 16px;
+        }
       }
       .rankImg {
         position: absolute;
-        right: 0;
+        right: 16px;
         top: 16px;
         width: 40px;
         height: 45px;

@@ -59,12 +59,14 @@ export default {
 }
 </script>
 
-<style lang="scss" sscoped>
+<style lang="scss" scoped>
+@import "@/assets/styles/mixins.scss";
 .page-comicend {
   display: flex;
   height: 100%;
   flex-direction: column;
   .header {
+    @include border-bottom;
     display: inline-block;
     position: relative;
     height: 44px;

@@ -59,7 +59,32 @@ export default {
 }
 </script>
 
-<style lang="scss" sscoped>
+<style lang="scss" scoped>
+@import "@/assets/styles/mixins.scss";
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header {
+  @include border-bottom;
+  display: inline-block;
+  position: relative;
+  height: 44px;
+  border: 0;
+  .headerBack {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 44px;
+  }
+  .headerContain {
+    text-align: center;
+    font-size: 18px;
+    line-height: 44px;
+    height: 44px;
+  }
+}
 .finewordMain {
   flex: 1;
   overflow: auto;
