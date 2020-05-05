@@ -12,7 +12,7 @@
       <div class="comicMainBox" v-if="showCard">
         <dl v-for="item in Endlist" :key="item.object_id" @click="getBooks(item.object_id)">
           <dd class="comic_cover">
-            <img :src="item.image_ext_url" alt />
+            <img v-lazy="item.image_ext_url" alt />
           </dd>
           <dt>
             <div class="dtBox">{{item.title}}</div>

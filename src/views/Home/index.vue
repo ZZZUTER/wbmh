@@ -44,7 +44,7 @@
             <div class="home_recommend_comic">
               <div class="comic_cover_container" style="width: 100%;">
                 <div class="comic_cover" @click="getBooks(fineWorks[0].object_id)">
-                  <img :src="fineWorks[0].image_ext_url" alt />
+                  <img v-lazy="fineWorks[0].image_ext_url" alt />
                 </div>
                 <div class="comic_cover_info">
                   <div class="comic_cover_titleBox">
@@ -65,7 +65,7 @@
             >
               <div class="comic_cover_container_two" style="width: 100%;">
                 <div class="comic_cover">
-                  <img :src="item.image_ext_url" alt />
+                  <img v-lazy="item.image_ext_url" alt />
                 </div>
                 <div class="comic_cover_info">
                   <div class="comic_cover_titleBox">
@@ -98,7 +98,7 @@
             >
               <div class="comic_cover_container_two" style="width: 100%;">
                 <div class="comic_cover">
-                  <img :src="item.image_ext_url" alt />
+                  <img v-lazy="item.image_ext_url" alt />
                 </div>
                 <div class="comic_cover_info">
                   <div class="comic_cover_titleBox">
@@ -130,7 +130,7 @@
               @click="getBooks(item.object_id)"
             >
               <div class="comic_cover comice_horizontal_cover">
-                <img :src="item.image_ext_url" alt />
+                <img v-lazy="item.image_ext_url" alt />
               </div>
               <div class="comic_cover_horizontal_info">
                 <div class="comic_cover_horizontal_title" style="font-size: 16px;">{{ item.title }}</div>
@@ -170,7 +170,7 @@
             >
               <div class="comic_cover_container_two" style="width: 100%;">
                 <div class="comic_cover">
-                  <img :src="item.image_ext_url" alt />
+                  <img v-lazy="item.image_ext_url" alt />
                 </div>
                 <div class="comic_cover_info">
                   <div class="comic_cover_titleBox">
@@ -198,7 +198,7 @@
             <div class="home_recommend_comic">
               <div class="comic_cover_container" style="width: 100%;">
                 <div class="comic_cover" @click="getBooks(xiaobianRecommend[0].object_id)">
-                  <img :src="xiaobianRecommend[0].image_ext_url" alt />
+                  <img v-lazy="xiaobianRecommend[0].image_ext_url" alt />
                 </div>
                 <div class="comic_cover_info">
                   <div class="comic_cover_titleBox">
@@ -222,7 +222,7 @@
             >
               <div class="comic_cover_container_two" style="width: 100%;">
                 <div class="comic_cover">
-                  <img :src="item.image_ext_url" alt />
+                  <img v-lazy="item.image_ext_url" alt />
                 </div>
                 <div class="comic_cover_info">
                   <div class="comic_cover_titleBox">
@@ -255,7 +255,7 @@
             >
               <div class="comic_cover_container_three" style="width: 100%;">
                 <div class="comic_cover">
-                  <img :src="item.image_ext_url" alt />
+                  <img v-lazy="item.image_ext_url" alt />
                 </div>
                 <div class="comic_cover_info">
                   <div class="comic_cover_titleBox">

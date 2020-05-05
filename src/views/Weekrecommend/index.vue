@@ -12,7 +12,7 @@
         <div class="finewordBox" v-for="item in weekRecommend" :key="item.info_id" @click="getBooks(item.object_id)">
           <dl>
             <dt>
-              <img :src="item.image_ext_url" alt />
+              <img v-lazy="item.image_ext_url" alt />
             </dt>
             <dd>
               <p class="pTop">{{item.title}}</p>

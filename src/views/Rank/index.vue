@@ -28,7 +28,7 @@
               @click="getBooks(item.object_id)"
             >
               <div class="comic_cover comice_horizontal_cover">
-                <img :src="item.hcover" alt />
+                <img v-lazy="item.hcover" alt />
               </div>
               <div class="comic_cover_horizontal_info rankMainTitle">
                 <div class="comic_cover_horizontal_title" style="font-size: 16px;">{{ item.name }}</div>

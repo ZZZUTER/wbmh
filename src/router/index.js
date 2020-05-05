@@ -1,23 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../views/Home'
-import Cate from '../views/Cate'
-import Comicend from '../views/Comicend'
-import Daypub from '../views/Daypub'
-import Mine from '../views/Mine'
-import Rank from '../views/Rank'
-import SearchResult from '../views/SearchResult'
-import Search from '../views/Search'
-import Login from '../views/Login'
-import Register from '../views/Register'
-import fineworks from '../views/Fineworks'
-import hotserial from '../views/Hotserial'
-import newarrival from '../views/Newarrival'
-import popularworks from '../views/Popularworks'
-import weekrecommend from '../views/Weekrecommend'
-import xiaobianrecommend from '../views/Xiaobianrecommend'
-import comicDetails from '../views/Details'
+const Home = () => import('../views/Home')
+const Cate = () => import('../views/Cate')
+const Comicend = () => import('../views/Comicend')
+const Daypub = () => import('../views/Daypub')
+const Mine = () => import('../views/Mine')
+const Rank = () => import('../views/Rank')
+const SearchResult = () => import('../views/SearchResult')
+const Search = () => import('../views/Search')
+const Login = () => import('../views/Login')
+const Register = () => import('../views/Register')
+const fineworks = () => import('../views/Fineworks')
+const hotserial = () => import('../views/Hotserial')
+const newarrival = () => import('../views/Newarrival')
+const popularworks = () => import('../views/Popularworks')
+const weekrecommend = () => import('../views/Weekrecommend')
+const xiaobianrecommend = () => import('../views/Xiaobianrecommend')
+const comicDetails = () => import('../views/Details')
 
 Vue.use(VueRouter)
 

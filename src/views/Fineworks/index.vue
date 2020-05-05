@@ -19,7 +19,7 @@
         >
           <dl>
             <dt>
-              <img :src="item.image_ext_url" alt />
+              <img v-lazy="item.image_ext_url" alt />
             </dt>
             <dd>
               <p class="pTop">{{item.title}}</p>

@@ -12,7 +12,7 @@
     <div class="detailsMain" v-backtotop>
       <div v-if="showCard">
         <div class="bookImgBox">
-          <img :src=" `https://img.manhua.weibo.com/${bookObj.comic.hcover} ` " alt />
+          <img v-lazy=" `https://img.manhua.weibo.com/${bookObj.comic.hcover} ` " alt />
           <div class="comic_article">
             <div class="comic_name">
               <span class="name">{{bookObj.comic.name}}</span>
